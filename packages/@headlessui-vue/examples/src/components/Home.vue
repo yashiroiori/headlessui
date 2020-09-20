@@ -18,7 +18,7 @@ const Examples = defineComponent({
     return () => {
       return h(
         'ul',
-        props.examples.map(example =>
+        props.examples.map((example) =>
           h(
             'li',
             { key: example.path },

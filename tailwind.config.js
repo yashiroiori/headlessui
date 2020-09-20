@@ -2,6 +2,12 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   purge: [],
+  future: 'all',
+  experimental: {
+    extendedSpacingScale: true,
+    extendedFontSizeScale: true,
+    defaultLineHeights: true,
+  },
   theme: {
     container: {
       center: true,

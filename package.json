@@ -32,10 +32,13 @@
     "trailingComma": "es5"
   },
   "devDependencies": {
+    "@tailwindcss/postcss7-compat": "^2.0.2",
     "@testing-library/jest-dom": "^5.11.6",
     "@types/node": "^14.14.14",
+    "autoprefixer": "^9",
+    "postcss": "^7",
     "prismjs": "^1.22.0",
-    "tailwindcss": "^2.0.2",
+    "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^3.9.7"

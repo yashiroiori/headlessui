@@ -19,15 +19,13 @@ export default function Home() {
     <div>
       <div className="flex p-12 space-x-4">
         <div className="inline-block p-12">
-          <span className="flex w-full mt-3 rounded-md shadow-sm sm:mt-0 sm:w-auto">
-            <button
-              onClick={toggle}
-              type="button"
-              className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5"
-            >
-              Show modal
-            </button>
-          </span>
+          <button
+            onClick={toggle}
+            type="button"
+            className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
+          >
+            Show modal
+          </button>
         </div>
 
         <ul className="p-4 text-gray-900 bg-gray-200">
@@ -57,7 +55,7 @@ export default function Home() {
         }}
         afterLeave={() => {
           addEvent('After leave (before alert)')
-          window.alert('Consider it done!')
+          console.log('Consider it done!')
           addEvent('After leave (after alert)')
           setEmail('')
         }}
@@ -128,11 +126,12 @@ export default function Home() {
                       </label>
                       <div className="relative mt-1 rounded-md shadow-sm">
                         <input
+                          type="email"
                           ref={inputRef}
                           value={email}
                           onChange={event => setEmail(event.target.value)}
                           id="email"
-                          className="block w-full px-3 form-input sm:text-sm sm:leading-5"
+                          className="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
                           placeholder="name@example.com"
                         />
                       </div>
@@ -144,8 +143,9 @@ export default function Home() {
             <div className="px-4 py-3 bg-gray-50 sm:px-6 sm:flex sm:flex-row-reverse">
               <span className="flex w-full rounded-md shadow-sm sm:ml-3 sm:w-auto">
                 <button
+                  onClick={toggle}
                   type="button"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-white transition duration-150 ease-in-out bg-red-600 border border-transparent rounded-md shadow-sm hover:bg-red-500 focus:outline-none focus:border-red-700 focus:shadow-outline-red sm:text-sm sm:leading-5"
+                  className="inline-flex justify-center w-full rounded-md border border-red-300 shadow-sm px-4 py-2 bg-red-600 text-sm font-medium text-white hover:bg-red-500 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-red-500"
                 >
                   Deactivate
                 </button>
@@ -154,7 +154,7 @@ export default function Home() {
                 <button
                   onClick={toggle}
                   type="button"
-                  className="inline-flex justify-center w-full px-4 py-2 text-base font-medium leading-6 text-gray-700 transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md shadow-sm hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue sm:text-sm sm:leading-5"
+                  className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
                 >
                   Cancel
                 </button>

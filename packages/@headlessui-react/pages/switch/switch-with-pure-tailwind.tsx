@@ -17,7 +17,7 @@ export default function Home() {
           onChange={setState}
           className={({ checked }) =>
             classNames(
-              'relative inline-flex flex-shrink-0 h-6 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:shadow-outline transition-colors ease-in-out duration-200',
+              'relative inline-flex flex-shrink-0 h-6 border-2 border-transparent rounded-full cursor-pointer w-11 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-indigo-500 transition-colors ease-in-out duration-200',
               checked ? 'bg-indigo-600' : 'bg-gray-200'
             )
           }

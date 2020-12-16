@@ -24,7 +24,7 @@ export default function App() {
         <title>Transition Component - Layout with sidebar</title>
       </Head>
 
-      <div className="flex h-screen overflow-hidden bg-cool-gray-100">
+      <div className="flex h-screen overflow-hidden bg-gray-100">
         {/* Off-canvas menu for mobile */}
         <Transition show={mobileOpen} unmount={false} className="fixed inset-0 z-40 flex">
           {/* Off-canvas menu overlay, show/hide based on off-canvas menu state. */}
@@ -41,7 +41,7 @@ export default function App() {
               <div className="fixed inset-0">
                 <div
                   onClick={() => setMobileOpen(false)}
-                  className="absolute inset-0 opacity-75 bg-cool-gray-600"
+                  className="absolute inset-0 opacity-75 bg-gray-600"
                 />
               </div>
             )}
@@ -56,12 +56,12 @@ export default function App() {
             leave="transition ease-in-out duration-300 transform"
             leaveFrom="translate-x-0"
             leaveTo="-translate-x-full"
-            className="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-teal-600"
+            className="relative flex flex-col flex-1 w-full max-w-xs pt-5 pb-4 bg-cyan-600"
           >
             <div className="absolute top-0 right-0 p-1 -mr-14">
               <Transition.Child
                 unmount={false}
-                className="flex items-center justify-center w-12 h-12 rounded-full focus:outline-none focus:bg-cool-gray-600"
+                className="flex items-center justify-center w-12 h-12 rounded-full focus:outline-none focus:bg-gray-600"
                 aria-label="Close sidebar"
                 as="button"
                 onClick={() => setMobileOpen(false)}
@@ -84,7 +84,7 @@ export default function App() {
             <div className="flex items-center flex-shrink-0 px-4">
               <img
                 className="w-auto h-8"
-                src="https://tailwindui.com/img/logos/easywire-logo-on-brand.svg"
+                src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg"
                 alt="Easywire logo"
               />
             </div>
@@ -98,11 +98,11 @@ export default function App() {
         <div className="hidden lg:flex lg:flex-shrink-0">
           <div className="flex flex-col w-64">
             {/* Sidebar component, swap this element with another sidebar if you like */}
-            <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-teal-600">
+            <div className="flex flex-col flex-grow pt-5 pb-4 overflow-y-auto bg-cyan-600">
               <div className="flex items-center flex-shrink-0 px-4">
                 <img
                   className="w-auto h-8"
-                  src="https://tailwindui.com/img/logos/easywire-logo-on-brand.svg"
+                  src="https://tailwindui.com/img/logos/easywire-logo-cyan-300-mark-white-text.svg"
                   alt="Easywire logo"
                 />
               </div>
@@ -112,7 +112,7 @@ export default function App() {
         <div className="flex-1 overflow-auto focus:outline-none" tabIndex={0}>
           <div className="relative z-10 flex flex-shrink-0 h-16 bg-white border-b border-gray-200 lg:border-none">
             <button
-              className="px-4 border-r border-cool-gray-200 text-cool-gray-400 focus:outline-none focus:bg-cool-gray-100 focus:text-cool-gray-600 lg:hidden"
+              className="px-4 border-r border-gray-200 text-gray-400 focus:outline-none focus:bg-gray-100 focus:text-gray-600 lg:hidden"
               aria-label="Open sidebar"
               onClick={() => setMobileOpen(true)}
             >
@@ -133,24 +133,35 @@ export default function App() {
             {/* Search bar */}
             <div className="flex justify-between flex-1 px-4 sm:px-6 lg:max-w-6xl lg:mx-auto lg:px-8">
               <div className="flex flex-1">
-                <form className="flex w-full md:ml-0" action="#" method="GET">
+                <form className="w-full flex md:ml-0" action="#" method="GET">
                   <label htmlFor="search_field" className="sr-only">
                     Search
                   </label>
-                  <div className="relative w-full text-cool-gray-400 focus-within:text-cool-gray-600">
-                    <div className="absolute inset-y-0 left-0 flex items-center pointer-events-none">
-                      <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
+                  <div className="relative w-full text-gray-400 focus-within:text-gray-600">
+                    <div
+                      className="absolute inset-y-0 left-0 flex items-center pointer-events-none"
+                      aria-hidden="true"
+                    >
+                      <svg
+                        className="h-5 w-5"
+                        x-description="Heroicon name: search"
+                        xmlns="http://www.w3.org/2000/svg"
+                        viewBox="0 0 20 20"
+                        fill="currentColor"
+                        aria-hidden="true"
+                      >
                         <path
-                          fillRule="evenodd"
-                          clipRule="evenodd"
+                          fill-rule="evenodd"
                           d="M8 4a4 4 0 100 8 4 4 0 000-8zM2 8a6 6 0 1110.89 3.476l4.817 4.817a1 1 0 01-1.414 1.414l-4.816-4.816A6 6 0 012 8z"
-                        />
+                          clip-rule="evenodd"
+                        ></path>
                       </svg>
                     </div>
                     <input
                       id="search_field"
-                      className="block w-full h-full py-2 pl-8 pr-3 rounded-md text-cool-gray-900 placeholder-cool-gray-500 focus:outline-none focus:placeholder-cool-gray-400 sm:text-sm"
-                      placeholder="Search"
+                      name="search_field"
+                      className="block w-full h-full pl-8 pr-3 py-2 border-transparent text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-0 focus:border-transparent sm:text-sm"
+                      placeholder="Search transactions"
                       type="search"
                     />
                   </div>

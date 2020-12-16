@@ -8,28 +8,26 @@
           >
 
           <div class="relative">
-            <span class="inline-block w-full rounded-md shadow-sm">
-              <ListboxButton
-                class="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
-              >
-                <span class="block truncate">{{ active.name }}</span>
-                <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M7 7l3-3 3 3m0 6l-3 3-3-3"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </ListboxButton>
-            </span>
+            <ListboxButton
+              class="w-full py-2 pl-3 pr-10 text-left bg-white border border-gray-300 cursor-default focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+            >
+              <span class="block truncate">{{ active.name }}</span>
+              <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                <svg
+                  class="w-5 h-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M7 7l3-3 3 3m0 6l-3 3-3-3"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </ListboxButton>
 
             <div class="absolute w-full mt-1 bg-white rounded-md shadow-lg">
               <ListboxOptions
@@ -80,7 +78,8 @@
       </label>
       <div class="relative mt-1 rounded-md shadow-sm">
         <input
-          class="block w-full form-input sm:text-sm sm:leading-5"
+          type="email"
+          class="focus:ring-indigo-500 focus:border-indigo-500 block w-full sm:text-sm border-gray-300 rounded-md"
           placeholder="you@example.com"
         />
       </div>
@@ -94,28 +93,26 @@
           >
 
           <div class="relative">
-            <span class="inline-block w-full rounded-md shadow-sm">
-              <ListboxButton
-                class="relative w-full py-2 pl-3 pr-10 text-left transition duration-150 ease-in-out bg-white border border-gray-300 rounded-md cursor-default focus:outline-none focus:shadow-outline-blue focus:border-blue-300 sm:text-sm sm:leading-5"
-              >
-                <span class="block truncate">{{ active.name }}</span>
-                <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
-                  <svg
-                    class="w-5 h-5 text-gray-400"
-                    viewBox="0 0 20 20"
-                    fill="none"
-                    stroke="currentColor"
-                  >
-                    <path
-                      d="M7 7l3-3 3 3m0 6l-3 3-3-3"
-                      strokeWidth="1.5"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
-                  </svg>
-                </span>
-              </ListboxButton>
-            </span>
+            <ListboxButton
+              class="w-full py-2 pl-3 pr-10 text-left bg-white border border-gray-300 cursor-default focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm rounded-md"
+            >
+              <span class="block truncate">{{ active.name }}</span>
+              <span class="absolute inset-y-0 right-0 flex items-center pr-2 pointer-events-none">
+                <svg
+                  class="w-5 h-5 text-gray-400"
+                  viewBox="0 0 20 20"
+                  fill="none"
+                  stroke="currentColor"
+                >
+                  <path
+                    d="M7 7l3-3 3 3m0 6l-3 3-3-3"
+                    strokeWidth="1.5"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  />
+                </svg>
+              </span>
+            </ListboxButton>
 
             <div class="absolute w-full mt-1 bg-white rounded-md shadow-lg">
               <ListboxOptions

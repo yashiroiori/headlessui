@@ -12,7 +12,7 @@ export default function Home() {
             <button
               type="button"
               onClick={() => setIsOpen(v => !v)}
-              className="inline-flex items-center px-3 py-2 text-sm font-medium leading-4 text-gray-700 transition bg-white border border-gray-300 rounded-md duration-150-out hover:text-gray-500 focus:outline-none focus:border-blue-300 focus:shadow-outline-blue active:text-gray-800 active:bg-gray-50"
+              className="inline-flex justify-center w-full rounded-md border border-gray-300 shadow-sm px-4 py-2 bg-white text-sm font-medium text-gray-700 hover:bg-gray-50 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-100 focus:ring-indigo-500"
             >
               {isOpen ? 'Hide' : 'Show'}
             </button>

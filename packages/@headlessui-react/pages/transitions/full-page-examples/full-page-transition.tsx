@@ -35,11 +35,11 @@ enum Direction {
 
 const pages = ['Dashboard', 'Team', 'Projects', 'Calendar', 'Reports']
 const colors = [
-  'bg-gradient-to-r from-teal-400 to-blue-400',
-  'bg-gradient-to-r from-blue-400 to-orange-400',
-  'bg-gradient-to-r from-orange-400 to-purple-400',
+  'bg-gradient-to-r from-cyan-400 to-blue-400',
+  'bg-gradient-to-r from-blue-400 to-yellow-400',
+  'bg-gradient-to-r from-yellow-400 to-purple-400',
   'bg-gradient-to-r from-purple-400 to-green-400',
-  'bg-gradient-to-r from-green-400 to-teal-400',
+  'bg-gradient-to-r from-green-400 to-cyan-400',
 ]
 
 function FullPageTransition() {
@@ -78,7 +78,7 @@ function FullPageTransition() {
                   <div className="flex-shrink-0">
                     <img
                       className="w-8 h-8"
-                      src="https://tailwindui.com/img/logos/workflow-mark-on-dark.svg"
+                      src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg"
                       alt="Workflow logo"
                     />
                   </div>

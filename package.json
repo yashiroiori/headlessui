@@ -35,18 +35,18 @@
     "@tailwindcss/forms": "^0.2.1",
     "@tailwindcss/postcss7-compat": "^2.0.2",
     "@tailwindcss/typography": "^0.3.1",
-    "@testing-library/jest-dom": "^5.11.6",
-    "@types/node": "^14.14.14",
-    "autoprefixer": "^9",
-    "postcss": "^7",
-    "prismjs": "^1.22.0",
+    "@testing-library/jest-dom": "^5.11.8",
+    "@types/node": "^14.14.20",
+    "autoprefixer": "^10.2.1",
+    "postcss": "^8.2.3",
+    "prismjs": "^1.23.0",
     "tailwindcss": "npm:@tailwindcss/postcss7-compat",
     "tsdx": "^0.14.1",
     "tslib": "^2.0.3",
     "typescript": "^3.9.7"
   },
   "dependencies": {
-    "husky": "^4.3.6",
+    "husky": "^4.3.7",
     "lint-staged": "^10.5.3"
   }
 }

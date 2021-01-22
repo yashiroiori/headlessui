@@ -1,11 +1,13 @@
-const fs = require('fs')
-const path = require('path')
+import fs from 'fs'
+import path from 'path'
 
-const prettier = require('prettier')
-const Prism = require('prismjs')
-require('prismjs/plugins/custom-class/prism-custom-class')
+import prettier from 'prettier'
+import vue from '@vitejs/plugin-vue'
+import Prism from 'prismjs'
 
-const routes = require('./examples/src/routes')
+import 'prismjs/plugins/custom-class/prism-custom-class'
+
+import routes from './examples/src/routes.json'
 
 function flatten(routes, resolver) {
   return routes
@@ -91,29 +93,38 @@ fs.writeFileSync(
   JSON.stringify(source, null, 2),
   'utf8'
 )
+
 // ---
 
-const TailwindUIPlugin = ({
-  root, // project root directory, absolute path
-  app, // Koa app instance
-  server, // raw http server instance
-  watcher, // chokidar file watcher instance
-  resolver, // chokidar file watcher instance
-}) => {
-  const routePaths = flatten(routes, route => route.path)
+function tailwindui() {
+  return {
+    name: 'tailwindui',
+    /**
+     * Despite being called `transformIndexHtml` this actually handles *all*
+     * HTML file requests. So this is where we transform the component source
+     * files to standard HTML documents.
+     *
+     * https://vitejs.dev/guide/api-plugin.html#transformindexhtml
+     */
+    transformIndexHtml: {
+      transform: async (html, ctx) => {
+        let routePaths = flatten(routes, route => route.path)
+        if (routePaths.includes(ctx.path)) {
+          ctx.path = './index.html'
+        }
 
-  app.use(async (ctx, next) => {
-    if (routePaths.includes(ctx.path)) {
-      ctx.path = './index.html'
-    }
-
-    await next()
-  })
+        return html
+      },
+    },
+  }
 }
 
-module.exports = {
+/**
+ * @type {import('vite').UserConfig}
+ */
+export default {
   alias: {
     '@headlessui/vue': path.resolve(__dirname, './src/index.ts'),
   },
-  configureServer: [TailwindUIPlugin],
+  plugins: [tailwindui(), vue()],
 }

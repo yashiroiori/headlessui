@@ -12,6 +12,7 @@ import { disposables } from '../../utils/disposables'
 import { Keys } from '../keyboard'
 import { Focus, calculateActiveIndex } from '../../utils/calculate-active-index'
 import { resolvePropValue } from '../../utils/resolve-prop-value'
+import { isDisabledReactIssue7711 } from '../../utils/bugs'
 
 enum ListboxStates {
   Open,
@@ -259,8 +260,10 @@ const Button = forwardRefWithAs(function Button<
   )
 
   const handlePointerUp = React.useCallback(
-    (event: MouseEvent) => {
+    (event: React.PointerEvent) => {
+      if (isDisabledReactIssue7711(event.currentTarget)) return event.preventDefault()
       if (props.disabled) return
+      if (event.button !== 0) return
       if (state.listboxState === ListboxStates.Open) {
         dispatch({ type: ActionTypes.CloseListbox })
         d.nextFrame(() => state.buttonRef.current?.focus({ preventScroll: true }))

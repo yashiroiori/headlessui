@@ -230,8 +230,10 @@ const Button = forwardRefWithAs(function Button<
   )
 
   const handlePointerUp = React.useCallback(
-    (event: MouseEvent) => {
+    (event: React.MouseEvent) => {
+      if (isDisabledReactIssue7711(event.currentTarget)) return event.preventDefault()
       if (props.disabled) return
+      if ((event.button ?? 0) !== 0) return
       if (state.menuState === MenuStates.Open) {
         dispatch({ type: ActionTypes.CloseMenu })
         d.nextFrame(() => state.buttonRef.current?.focus({ preventScroll: true }))
@@ -381,6 +383,7 @@ type MenuItemPropsWeControl =
   | 'tabIndex'
   | 'aria-disabled'
   | 'onPointerLeave'
+  | 'onPointerMove'
   | 'onFocus'
 
 function Item<TTag extends React.ElementType = typeof DEFAULT_ITEM_TAG>(
@@ -415,7 +418,6 @@ function Item<TTag extends React.ElementType = typeof DEFAULT_ITEM_TAG>(
 
   const handleClick = React.useCallback(
     (event: React.MouseEvent) => {
-      if (isDisabledReactIssue7711(event.currentTarget)) return event.preventDefault()
       if (disabled) return event.preventDefault()
       dispatch({ type: ActionTypes.CloseMenu })
       disposables().nextFrame(() => state.buttonRef.current?.focus({ preventScroll: true }))

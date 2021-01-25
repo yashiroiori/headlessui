@@ -75,15 +75,26 @@ export async function press(event: Partial<KeyboardEvent>) {
   return type([event])
 }
 
-export async function click(element: Document | Element | Window | Node | null) {
+export enum MouseButton {
+  Left = 0,
+  Middle = 1,
+  Right = 2,
+}
+
+export async function click(
+  element: Document | Element | Window | Node | null,
+  button = MouseButton.Left
+) {
   try {
     if (element === null) return expect(element).not.toBe(null)
 
-    fireEvent.pointerDown(element)
-    fireEvent.mouseDown(element)
-    fireEvent.pointerUp(element)
-    fireEvent.mouseUp(element)
-    fireEvent.click(element)
+    let options = { button }
+
+    fireEvent.pointerDown(element, options)
+    fireEvent.mouseDown(element, options)
+    fireEvent.pointerUp(element, options)
+    fireEvent.mouseUp(element, options)
+    fireEvent.click(element, options)
 
     await new Promise(nextFrame)
   } catch (err) {
